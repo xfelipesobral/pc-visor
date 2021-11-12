@@ -1,0 +1,24 @@
+{
+  "name": "pc-visor",
+  "version": "1.0.0",
+  "description": "Visor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/observer.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xfelipesobral/pc-visor.git"
+  },
+  "author": "Felipe V. Sobral",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xfelipesobral/pc-visor/issues"
+  },
+  "homepage": "https://github.com/xfelipesobral/pc-visor#readme",
+  "dependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  }
+}
