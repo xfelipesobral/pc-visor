@@ -6,9 +6,9 @@
  * [] Transmitir via serial
  */
 
-// import { Display } from './classes/display'
+import { Bridge } from './classes/bridge'
 
-// const display = new Display()
-
-// display.complete()
-// .then(console.log)
+const bridge = new Bridge()
+setInterval(() => {
+    bridge.send()
+}, 1000)
