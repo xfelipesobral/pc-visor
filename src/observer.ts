@@ -6,34 +6,9 @@
  * [] Transmitir via serial
  */
 
-import { System } from './classes/system'
+// import { Display } from './classes/display'
 
-const system = new System()
+// const display = new Display()
 
-system.complete()
-.then(console.log)
-
-
-
-// import { time, cpu, system, cpuTemperature, mem, networkStats, graphics } from 'systeminformation'
-
-
-
-// async function executaTeste(funcao: Function, nome: String): Promise<void> {
-//     console.log('---------------------------')
-//     console.log(`/** ${nome} **/`)
-//     console.log(await funcao())
-// }
-
-// async function testes(): Promise<void> {
-//     await executaTeste(time, 'Hora')
-//     await executaTeste(mem, 'Memória')
-//     await executaTeste(cpuTemperature, 'Temperatura da CPU')
-//     await executaTeste(system, 'Sistema')
-//     await executaTeste(cpu, 'CPU')
-//     await executaTeste(networkStats, 'Internet')
-//     await executaTeste(graphics, 'Graficos')
-// }
-
-// testes()
-
+// display.complete()
+// .then(console.log)
