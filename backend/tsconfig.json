@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es6"],                     
+    "rootDir": "./",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@core": ["./src/core/index.ts"],
+      "@device": ["./src/modules/device/service.ts"],
+      "@device/*": ["./src/modules/device/useCases/*"]
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "declaration": false,
+    "typeRoots": ["./src/@types"]
+  }
+}
