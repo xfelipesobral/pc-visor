@@ -1,5 +1,6 @@
 # pip install psutil GPUtil py-cpuinfo
-import time, platform, psutil, GPUtil, cpuinfo, requests
+import time, platform, psutil, GPUtil, cpuinfo, requests, uuid
+from uuid import getnode
 
 def send(cpuUsage, cpuTemperature, gpuName, gpuUsage, gpuTemperature, ram, ramUsed):
     body = {
@@ -49,7 +50,7 @@ def monit():
 
 # Config
 password = 'teste'
-serial = 1
+serial = uuid.getnode() # Mac Address
 api = 'http://localhost:3300/devices'
 
 name = platform.node()
