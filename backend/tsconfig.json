@@ -9,7 +9,8 @@
     "paths": {
       "@core": ["./src/core/index.ts"],
       "@device": ["./src/modules/device/service.ts"],
-      "@device/*": ["./src/modules/device/useCases/*"]
+      "@device/*": ["./src/modules/device/useCases/*"],
+      "@middlewares/*": ["./src/middlewares/*"]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true,
