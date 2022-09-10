@@ -1,6 +1,6 @@
 import { IDevice, IDeviceRepository } from './interface'
 
-import { read, sync } from '@core'
+import { read, sync } from '@data'
 
 const moduleName = 'devices'
 

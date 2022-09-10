@@ -7,7 +7,7 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
-      "@core": ["./src/core/index.ts"],
+      "@data": ["./data/manager.ts"],
       "@device": ["./src/modules/device/service.ts"],
       "@device/*": ["./src/modules/device/useCases/*"],
       "@middlewares/*": ["./src/middlewares/*"]

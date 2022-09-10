@@ -4,7 +4,7 @@ const spacer = '#'
 
 function readFile(moduleName: string): Array<string> {
     try {
-        return fs.readFileSync(`data/${moduleName}.csv`, 'utf-8').split(/\r?\n/)
+        return fs.readFileSync(`data/csv/${moduleName}.csv`, 'utf-8').split(/\r?\n/)
     } catch (e) {
         return []
     }
@@ -17,7 +17,7 @@ function writeFile(moduleName: string, arrLines: Array<string>) {
         lines += (i === 0 ? '' : '\r\n') + item
     })
 
-    fs.writeFileSync(`data/${moduleName}.csv`, lines)
+    fs.writeFileSync(`data/csv/${moduleName}.csv`, lines)
 }
 
 function read(moduleName: string) {
