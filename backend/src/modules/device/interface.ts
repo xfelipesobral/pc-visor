@@ -10,9 +10,6 @@ interface IDevice {
     gpuTemperature: number
     ram: number
     ramUsed: number
-    city: string
-    cityTemperature: number
-    cityTemperatureStatus: string
 }
 
 interface IDeviceRepository {

@@ -1,2 +1,2 @@
-id#name#updated#cpuName#cpuUsage#cpuTemperature#gpuName#gpuUsage#gpuTemperature#ram#ramUsed#city#cityTemperature#cityTemperatureStatus
-1#Novo#2022-09-10T06:15:10.087Z#teste#50#40#teste#10#40#8000#6500#teste#60#teste
+id#name#updated#cpuName#cpuUsage#cpuTemperature#gpuName#gpuUsage#gpuTemperature#ram#ramUsed
+1#MacBook-Air-de-Felipe-2.local#2022-09-10T07:37:34.650Z#Apple M1#11.1#0#Apple M1#11.1#0#8#6.6072235107421875

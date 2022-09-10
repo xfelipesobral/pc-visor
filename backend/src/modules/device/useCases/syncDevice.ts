@@ -15,10 +15,7 @@ function syncDevice(request: Request, response: Response) {
         gpuUsage,
         gpuTemperature,
         ram,
-        ramUsed,
-        city,
-        cityTemperature,
-        cityTemperatureStatus,
+        ramUsed
     } = request.body as IDevice
 
     if (!id) id = ''
@@ -35,10 +32,7 @@ function syncDevice(request: Request, response: Response) {
         gpuUsage,
         gpuTemperature,
         ram,
-        ramUsed,
-        city,
-        cityTemperature,
-        cityTemperatureStatus,
+        ramUsed
     })
 
     return response.status(201).json(item)
