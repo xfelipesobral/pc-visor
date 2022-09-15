@@ -1,21 +1,9 @@
-interface IDevice {
-    id: string
-    name: string
-    updated: string
-    cpuName: string
-    cpuUsage: number
-    cpuTemperature: number
-    gpuName: string
-    gpuUsage: number
-    gpuTemperature: number
-    ram: number
-    ramUsed: number
-}
+import { Device as IDevice } from "@prisma/client"
 
 interface IDeviceRepository {
-    sync(device: IDevice): IDevice // Case not exists create, if exists update
-    findById(id: string): IDevice // Return device from id
-    findAll(): Array<IDevice> // Return all devices
+    sync(device: IDevice): Promise<IDevice> // Case not exists create, if exists update
+    findById(id: string): Promise<IDevice> // Return device from id
+    findAll(): Promise<Array<IDevice>> // Return all devices
 }
 
 export { IDevice, IDeviceRepository }

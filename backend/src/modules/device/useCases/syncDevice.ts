@@ -1,41 +1,39 @@
 import { Request, Response } from 'express'
 
 import Device from '@device'
-import { IDevice } from '../interface'
 
-function syncDevice(request: Request, response: Response) {
-    let {
-        id,
-        name,
-        updated,
-        cpuName,
-        cpuUsage,
-        cpuTemperature,
-        gpuName,
-        gpuUsage,
-        gpuTemperature,
-        ram,
-        ramUsed
-    } = request.body as IDevice
+function round(n: string) {
+    return Math.round(Number(Number(n).toFixed(2)) * 100)
+}
 
-    if (!id) id = ''
-    if (!updated) updated = new Date().toJSON()
+async function syncDevice(request: Request, response: Response) {
+    const body: any = request.body
 
-    const item = Device.sync({
-        id,
-        name,
-        updated,
-        cpuName,
-        cpuUsage,
-        cpuTemperature,
-        gpuName,
-        gpuUsage,
-        gpuTemperature,
-        ram,
-        ramUsed
-    })
+    try {
+        const device = await Device.sync({
+            id: String(body.id),
+            name: body.name,
+            cpuName: body.cpuName,
+            cpuUsage: round(body.cpuUsage),
+            cpuTemperature: round(body.cpuTemperature),
+            gpuName: body.gpuName,
+            gpuUsage: round(body.gpuUsage),
+            gpuTemperature: round(body.gpuTemperature),
+            ram: round(body.ram),
+            ramUsed: round(body.ramUsed),
+            createdAt: body.createdAt,
+            updatedAt: body.updatedAt
+        })
 
-    return response.status(201).json(item)
+        return response.status(201).json({ device })
+    } catch (e) {
+        console.log(e)
+
+        return response.status(403).send({ 
+            message: 'Error on create or update a device. Check fields and try again' 
+        })
+    }
+
 }
 
 export default syncDevice

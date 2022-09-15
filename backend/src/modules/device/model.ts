@@ -1,23 +1,36 @@
 import { IDevice, IDeviceRepository } from './interface'
-
-import { read, sync } from '@data'
-
-const moduleName = 'devices'
+import { PrismaClient } from '@prisma/client'
 
 class DeviceModel implements IDeviceRepository {
+    private prisma = new PrismaClient().device
 
-    findAll(): IDevice[] {
-        return read(moduleName)
+    findAll(): Promise<IDevice[]> {
+        return this.prisma.findMany()
     }
 
-    sync(device: IDevice): IDevice {
-        const id = sync(moduleName, device)
-        return this.findById(id)
+    async sync(data: IDevice): Promise<IDevice> {
+        const device = await this.findById(data.id)
+
+        if (!device) {
+            return this.prisma.create({ data })
+        }
+
+        data.updatedAt = new Date()
+
+        return this.prisma.update({
+            where: {
+                id: data.id
+            },
+            data
+        })
     }
 
-    findById(id: string): IDevice {
-        const devices = this.findAll()
-        return devices.find(item => item.id === id)
+    findById(id: string): Promise<IDevice> { 
+        return this.prisma.findUnique({
+            where: {
+                id
+            }
+        })
     }
 }
 

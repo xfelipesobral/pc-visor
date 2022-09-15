@@ -16,7 +16,7 @@ def send(cpuUsage, cpuTemperature, gpuName, gpuUsage, gpuTemperature, ram, ramUs
         'ramUsed': ramUsed
     }
     
-    requests.put(api, json = body, headers = { "authorization": password })
+    requests.put(api, json = body, headers = { 'authorization': password })
     print('Informations sent')
 
 def bytesToGigabytes(bytes):
