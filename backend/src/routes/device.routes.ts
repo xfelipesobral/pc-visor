@@ -1,8 +1,8 @@
 import { Router } from 'express'
 
-import auth from '@middlewares/auth'
+import auth from '../middlewares/auth'
 
-import syncDevice from '@device/syncDevice'
+import syncDevice from '../modules/device/useCases/syncDevice'
 
 const devicesRouter = Router()
 

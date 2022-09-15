@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 
-import Device from '@device'
+import Device from '../service'
 
 function round(n: string) {
     return Math.round(Number(Number(n).toFixed(2)) * 100)

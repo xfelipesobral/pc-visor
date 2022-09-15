@@ -2,8 +2,6 @@ import express from 'express'
 
 import routes from './src/routes'
 
-import Device from '@device'
-
 const appPort = process.env.SERVER_PORT || 3300
 
 const app = express()

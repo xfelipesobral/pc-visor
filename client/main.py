@@ -1,6 +1,5 @@
 # pip install psutil GPUtil py-cpuinfo
 import time, platform, psutil, GPUtil, cpuinfo, requests, uuid
-from uuid import getnode
 
 def send(cpuUsage, cpuTemperature, gpuName, gpuUsage, gpuTemperature, ram, ramUsed):
     body = {

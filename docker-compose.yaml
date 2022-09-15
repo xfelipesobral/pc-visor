@@ -1,0 +1,20 @@
+version: '3'
+
+networks:
+  pcvisor:
+
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - SERVER_PORT=3000
+      - REST_PASSWORD=p@ssw0rd
+      - BACKEND_URL=http://localhost
+    ports:
+      - 3002:3000
+    networks:
+      - pcvisor
+    command: yarn start
