@@ -1,0 +1,1 @@
+pyinstaller main.py -F --name "pc-visor" --hidden-import waitress --clean

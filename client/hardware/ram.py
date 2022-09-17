@@ -11,4 +11,6 @@ def informations():
         'used': bytesToGigabytes(mem.available),
     }
     
+    ram['used'] = ram['total'] - ram['used']
+    
     return ram
