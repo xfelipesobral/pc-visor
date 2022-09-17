@@ -7,7 +7,7 @@ function auth(request: Request, response: Response, next: NextFunction) {
         return response.status(401).json({ error: 'Authorization token missing!' })
     }
 
-    const password = process.env.REST_PASSWORD || 'teste'
+    const password = process.env.REST_PASSWORD || 'strongpassword'
     if (authorization === password) {
         return next()
     }

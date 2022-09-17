@@ -2,13 +2,16 @@ import os, json, requests, uuid
 
 def getConfigs():
     directory = os.getcwd()
-    fileName = 'pc_visor_config.json'
+    fileName = 'pc_visor.config'
 
     try:
         with open(fileName, 'r') as f:
             return json.load(f)
     except:
-        print('Create config file ("'+fileName+'") in '+directory)
+        with open(fileName, 'w') as f:
+            f.write('{ "api": "http://localhost:3300", "password": "strongpassword", "description": "Testing device" }')
+            
+        print('Edit config file in '+directory+'/'+fileName)
         return False
 
 def send(body):
@@ -20,5 +23,8 @@ def send(body):
     body['id'] = uuid.getnode()
     body['name'] = config['description']
     
-    print('Informations send to '+config['api'])
-    requests.put(config['api']+'/devices', json = body, headers = { 'authorization': config['password'] })
+    try:
+        requests.put(config['api']+'/devices', json = body, headers = { 'authorization': config['password'] })
+        print('Informations send to '+config['api'])
+    except:
+        print(config['api']+' not accessible')

@@ -4,3 +4,4 @@ yarn.lock
 dist/
 .DS_store
 __pycache__
+pc_visor.config
