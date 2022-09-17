@@ -5,3 +5,5 @@ dist/
 .DS_store
 __pycache__
 pc_visor.config
+client/pc-visor.spec
+client/build/
